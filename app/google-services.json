@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "715263463190",
+    "project_id": "classroomelite-a9442",
+    "storage_bucket": "classroomelite-a9442.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715263463190:android:0defa370178e1595cd0a37",
+        "android_client_info": {
+          "package_name": "com.ashish.classroomelite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715263463190-vgvtp2djb3egs42i5g1ecu0uejbd1ois.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNSMs5T1bJjvsWonyxXB9A56wzrhW36F4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715263463190-vgvtp2djb3egs42i5g1ecu0uejbd1ois.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ClassRoomElite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="verify_otp">VERIFY OTP</string>
+    <string name="send_otp">SEND OTP</string>
+    <string name="otp_verification">OTP VERIFICATION</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="student">Student</string>
+    <string name="faculty">Faculty</string>
+    <string name="save">Save</string>
+    <string name="class_name">Class Name</string>
+    <string name="todo">TODO</string>
+    <string name="student_name">Student Name</string>
+    <string name="student_roll_n">Student Roll n.</string>
+    <string name="querries">Querries</string>
+    <string name="result">Result</string>
+    <string name="_021">021</string>
+    <string name="rohit_sharma">Rohit Sharma</string>
+    <string name="play">Play</string>
+    <string name="todo2">TODO</string>
+    <string name="logout">Logout</string>
+</resources>

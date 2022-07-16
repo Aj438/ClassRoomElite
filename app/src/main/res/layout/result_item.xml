@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_10sdp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/student_name"
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/rohit_sharma"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/student_roll"
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="@string/_021"
+            android:textColor="#FF80AB"
+            android:textSize="@dimen/_14ssp" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_result"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:foregroundGravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TableLayout
+            android:id="@+id/t_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <TableRow android:background="@color/white">
+
+                <TextView
+                    style="@style/subject_tv"
+                    android:text="Subject"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/test_1"
+                    android:text="Test-1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/test_1"
+                    android:text="Test-2"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/test_1"
+                    android:text="Final"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/test_1"
+                    android:text="Total"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+
+            <TableRow android:background="@color/white">
+
+                <TextView
+                    style="@style/subject_tv"
+                    android:text="Hindi" />
+
+                <TextView
+                    android:id="@+id/hindi_1"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/hindi_2"
+                    style="@style/test_1"
+
+                    />
+
+                <TextView
+                    android:id="@+id/hindi_finall"
+                    style="@style/test_1"
+
+                    />
+
+                <TextView
+                    android:id="@+id/hindi_total"
+                    style="@style/test_1" />
+
+            </TableRow>
+
+            <TableRow android:background="@color/white">
+
+                <TextView
+                    style="@style/subject_tv"
+                    android:text="English"
+
+                    />
+
+                <TextView
+                    android:id="@+id/et1"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/et2"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/eth"
+                    style="@style/test_1"
+
+                    />
+
+                <TextView
+                    android:id="@+id/eTotal"
+                    style="@style/test_1" />
+
+            </TableRow>
+
+            <TableRow android:background="@color/white">
+
+                <TextView
+                    style="@style/subject_tv"
+                    android:text="Physics" />
+
+                <TextView
+                    android:id="@+id/pt1"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/pt2"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/pth"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/pTotal"
+                    style="@style/test_1" />
+
+            </TableRow>
+
+            <TableRow android:background="@color/white">
+
+                <TextView
+                    style="@style/subject_tv"
+                    android:text="Math" />
+
+                <TextView
+                    android:id="@+id/mt1"
+                    style="@style/test_1"
+
+                    />
+
+                <TextView
+                    android:id="@+id/mt2"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/mth"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/mTotal"
+                    style="@style/test_1" />
+
+            </TableRow>
+
+            <TableRow android:background="@color/white">
+
+                <TextView
+                    style="@style/subject_tv"
+                    android:text="Chemistry"
+
+                    />
+
+                <TextView
+                    android:id="@+id/ct1"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/ct2"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/cth"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/cTotal"
+                    style="@style/test_1" />
+
+
+            </TableRow>
+
+            <TableRow android:background="@color/white">
+
+                <TextView
+                    style="@style/subject_tv"
+                    android:text="Total" />
+
+                <TextView
+                    android:id="@+id/tt1"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/tt2"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/tth"
+                    style="@style/test_1" />
+
+                <TextView
+                    android:id="@+id/tTotal"
+                    style="@style/test_1" />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

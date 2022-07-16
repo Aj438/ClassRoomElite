@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/flashScreenFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ashish.classroomelite.Fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_studentProfileFragment"
+            app:destination="@id/studentProfileFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_facultyProfileFragment"
+            app:destination="@id/facultyProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/facultyProfileFragment"
+        android:name="com.ashish.classroomelite.Fragment.FacultyProfileFragment"
+        android:label="fragment_faculty_profile"
+        tools:layout="@layout/fragment_faculty_profile" >
+        <action
+            android:id="@+id/action_facultyProfileFragment_to_facultyActivityFragment"
+            app:destination="@id/facultyActivityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentProfileFragment"
+        android:name="com.ashish.classroomelite.Fragment.StudentProfileFragment"
+        android:label="fragment_student_profile"
+        tools:layout="@layout/fragment_student_profile" >
+        <action
+            android:id="@+id/action_studentProfileFragment_to_studentActivityFragment"
+            app:destination="@id/studentActivityFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/facultyActivityFragment"
+        android:name="com.ashish.classroomelite.Fragment.FacultyActivityFragment"
+        android:label="fragment_faculty_activity"
+        tools:layout="@layout/fragment_faculty_activity" >
+
+        <action
+            android:id="@+id/action_facultyActivityFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+        <argument
+            android:name="faculty"
+            app:argType="com.ashish.classroomelite.Models.Faculty" />
+        <action
+            android:id="@+id/action_facultyActivityFragment_to_resourcesFragment"
+            app:destination="@id/resourcesFragment" />
+        <action
+            android:id="@+id/action_facultyActivityFragment_to_attendanceFragment"
+            app:destination="@id/attendanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentActivityFragment"
+        android:name="com.ashish.classroomelite.Fragment.StudentActivityFragment"
+        android:label="fragment_student_activity"
+        tools:layout="@layout/fragment_student_activity" >
+
+        <argument
+            android:name="student"
+            app:argType="com.ashish.classroomelite.Models.Student" />
+        <action
+            android:id="@+id/action_studentActivityFragment_to_resourcesFragment"
+            app:destination="@id/resourcesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.ashish.classroomelite.Fragment.StudentListFragment"
+        android:label="fragment_student_list"
+        tools:layout="@layout/fragment_student_list"
+        >
+        <argument
+            android:name="classname"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_studentListFragment_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.ashish.classroomelite.Fragment.BottomSheetFragment"
+        android:label="fragment_bottom_sheet"
+        tools:layout="@layout/fragment_bottom_sheet" >
+        <argument
+            android:name="student"
+            app:argType="com.ashish.classroomelite.Models.Student" />
+    </dialog>
+    <fragment
+        android:id="@+id/resourcesFragment"
+        android:name="com.ashish.classroomelite.Fragment.ResourcesFragment"
+        android:label="fragment_resources"
+        tools:layout="@layout/fragment_resources" >
+        <argument
+            android:name="addResources"
+            app:argType="boolean" />
+        <argument
+            android:name="className"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/flashScreenFragment"
+        android:name="com.ashish.classroomelite.Fragment.FlashScreenFragment"
+        android:label="fragment_flash_screen"
+        tools:layout="@layout/fragment_flash_screen" >
+        <action
+            android:id="@+id/action_flashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_flashScreenFragment_to_facultyActivityFragment"
+            app:destination="@id/facultyActivityFragment" />
+        <action
+            android:id="@+id/action_flashScreenFragment_to_studentActivityFragment"
+            app:destination="@id/studentActivityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.ashish.classroomelite.Fragment.AttendanceFragment"
+        android:label="fragment_attendance"
+        tools:layout="@layout/fragment_attendance" >
+        <argument
+            android:name="classname"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

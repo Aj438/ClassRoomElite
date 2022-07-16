@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragment.LoginFragment">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/start_icon"
+        android:contentDescription="@string/todo" />
+    <LinearLayout
+        android:id="@+id/liner_button"
+        android:layout_below="@+id/logo"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/facultyButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/faculty"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/_15ssp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/studentButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/student"
+            android:textAllCaps="false"
+            android:textColor="@color/purple_700"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/countrycodepicker"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_below="@+id/liner_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_100sdp"
+        app:ccp_contentColor="@android:color/holo_orange_dark"
+        app:ccp_areaCodeDetectedCountry="true"
+        app:ccp_autoDetectCountry="true" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone_numberlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countrycodepicker"
+            android:layout_marginLeft="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_70sdp"
+            app:helperText="Required"
+            app:helperTextTextColor="@android:color/holo_red_dark"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            android:layout_centerHorizontal="true"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/getphonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:lines="1"
+                android:textColor="?android:textColorPrimary"
+                android:cursorVisible="true"
+                android:inputType="number"
+                android:hint="@string/phone_number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/otpnumberlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countrycodepicker"
+            android:layout_marginLeft="@dimen/_70sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_70sdp"
+            android:visibility="gone"
+            app:helperText="Required"
+            app:helperTextTextColor="@android:color/holo_red_dark"
+            app:counterEnabled="true"
+            app:counterMaxLength="6"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/getotpnumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:lines="1"
+                android:cursorVisible="true"
+                android:visibility="gone"
+                android:inputType="number"
+                android:hint="@string/otp_verification"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sendotpButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_below="@+id/countrycodepicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_110sdp"
+        android:text="@string/send_otp"
+        android:visibility="gone"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/_15ssp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/verifyotpButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_below="@+id/sendotpButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            android:textColor="@color/purple_700"
+            android:text="@string/verify_otp"
+            android:textSize="15sp" />
+
+
+
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/progressbar"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_30sdp"/>
+
+</RelativeLayout>

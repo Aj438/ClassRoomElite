@@ -20,7 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
-            android:text="@string/rohit_sharma"
             android:textColor="@color/blue"
             android:textSize="@dimen/_15ssp"
             android:textStyle="bold" />
@@ -31,7 +30,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
-            android:text="@string/_021"
             android:textColor="#FF80AB"
             android:textSize="@dimen/_14ssp" />
     </LinearLayout>

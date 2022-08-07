@@ -1,12 +1,6 @@
 package com.ashish.classroomelite.Fragment;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavDirections;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,18 +8,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.ashish.classroomelite.Models.Result;
 import com.ashish.classroomelite.Models.Student;
 import com.ashish.classroomelite.R;
 import com.ashish.classroomelite.databinding.FragmentBottomSheetBinding;
-import com.ashish.classroomelite.databinding.FragmentStudentListBinding;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
-import com.google.firebase.firestore.WriteBatch;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -90,6 +83,11 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
             }).addOnFailureListener(e -> Toast.makeText(requireContext(), e.getMessage(), Toast.LENGTH_SHORT).show());
 
         }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override

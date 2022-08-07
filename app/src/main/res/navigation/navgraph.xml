@@ -12,9 +12,17 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_studentProfileFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
             app:destination="@id/studentProfileFragment" />
         <action
             android:id="@+id/action_loginFragment_to_facultyProfileFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
             app:destination="@id/facultyProfileFragment" />
     </fragment>
     <fragment
@@ -23,6 +31,10 @@
         android:label="fragment_faculty_profile"
         tools:layout="@layout/fragment_faculty_profile" >
         <action
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
             android:id="@+id/action_facultyProfileFragment_to_facultyActivityFragment"
             app:destination="@id/facultyActivityFragment" />
     </fragment>
@@ -32,6 +44,10 @@
         android:label="fragment_student_profile"
         tools:layout="@layout/fragment_student_profile" >
         <action
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
             android:id="@+id/action_studentProfileFragment_to_studentActivityFragment"
             app:destination="@id/studentActivityFragment" />
 
@@ -44,15 +60,27 @@
 
         <action
             android:id="@+id/action_facultyActivityFragment_to_studentListFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
             app:destination="@id/studentListFragment" />
         <argument
             android:name="faculty"
             app:argType="com.ashish.classroomelite.Models.Faculty" />
         <action
             android:id="@+id/action_facultyActivityFragment_to_resourcesFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
             app:destination="@id/resourcesFragment" />
         <action
             android:id="@+id/action_facultyActivityFragment_to_attendanceFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
             app:destination="@id/attendanceFragment" />
     </fragment>
     <fragment
@@ -66,6 +94,10 @@
             app:argType="com.ashish.classroomelite.Models.Student" />
         <action
             android:id="@+id/action_studentActivityFragment_to_resourcesFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
             app:destination="@id/resourcesFragment" />
     </fragment>
     <fragment
@@ -109,13 +141,31 @@
         tools:layout="@layout/fragment_flash_screen" >
         <action
             android:id="@+id/action_flashScreenFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/flashScreenFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_flashScreenFragment_to_facultyActivityFragment"
-            app:destination="@id/facultyActivityFragment" />
+            app:destination="@id/facultyActivityFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/flashScreenFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_flashScreenFragment_to_studentActivityFragment"
-            app:destination="@id/studentActivityFragment" />
+            app:destination="@id/studentActivityFragment"
+            app:enterAnim="@anim/slide_in_rigth"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/flashScreenFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/attendanceFragment"

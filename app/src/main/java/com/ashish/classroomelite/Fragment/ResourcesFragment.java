@@ -52,6 +52,8 @@ public class ResourcesFragment extends Fragment implements VideoAdapter.CallBack
     @Override
     public void onStop() {
         super.onStop();
+        player.stop();
+        player=null;
         binding = null;
     }
 
@@ -140,7 +142,6 @@ public class ResourcesFragment extends Fragment implements VideoAdapter.CallBack
             }
 
         }).addOnFailureListener(e -> {
-            Log.d("rohit", "sendvideotoStorage: " + e.getMessage());
             progressDialog.dismiss();
         }).addOnProgressListener(taskSnapshot -> {
             double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());

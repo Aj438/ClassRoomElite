@@ -76,7 +76,7 @@ public class StudentActivityFragment extends Fragment {
             if (value != null && value.exists()) {
                 Attendance attendance = value.toObject(Attendance.class);
                 if (attendance != null) {
-                    binding.studentPresent.setText(attendance.getPresent());
+                    binding.studentPresent.setText(String.valueOf(attendance.getPresent()));
                 }
             }
         });

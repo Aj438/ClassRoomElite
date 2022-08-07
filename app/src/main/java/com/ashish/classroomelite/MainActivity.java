@@ -1,5 +1,10 @@
 package com.ashish.classroomelite;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -18,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.logOut:
                 auth.signOut();
+                SharedPreferences sharedPreferences = this.getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+                SharedPreferences.Editor myEdit = sharedPreferences.edit();
+                myEdit.putString("user", null);
+                myEdit.apply();
+                triggerRebirth(this);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -31,7 +41,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         auth=FirebaseAuth.getInstance();
         if (auth.getCurrentUser()==null){
-//            Navigation.findNavController().navigate();
+
         }
+    }
+    public static void triggerRebirth(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        Intent intent = packageManager.getLaunchIntentForPackage(context.getPackageName());
+        ComponentName componentName = intent.getComponent();
+        Intent mainIntent = Intent.makeRestartActivityTask(componentName);
+        context.startActivity(mainIntent);
+        Runtime.getRuntime().exit(0);
     }
 }

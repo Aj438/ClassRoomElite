@@ -37,7 +37,7 @@ public class FacultyActivityFragment extends Fragment implements ResultAdapter.C
         Query query = resultRef.whereEqualTo("studentClass",amount.getClassName());
 
         FirestoreRecyclerOptions<Result> list = new FirestoreRecyclerOptions.Builder<Result>()
-                .setQuery(resultRef, Result.class).build();
+                .setQuery(query, Result.class).build();
         adapter = new ResultAdapter(list , this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false);
         binding.studentResultRv.setLayoutManager(linearLayoutManager);
@@ -60,6 +60,7 @@ public class FacultyActivityFragment extends Fragment implements ResultAdapter.C
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
          firebaseFirestore = FirebaseFirestore.getInstance();
+        assert getArguments() != null;
         amount = (Faculty)getArguments().get("faculty");
        binding=FragmentFacultyActivityBinding.inflate(inflater,container,false);
         return binding.getRoot();

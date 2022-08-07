@@ -65,20 +65,6 @@ public class LoginFragment extends Fragment {
         countryCode = binding.countrycodepicker.getDefaultCountryCodeWithPlus();
         binding.countrycodepicker.setOnCountryChangeListener(() -> countryCode = binding.countrycodepicker.getSelectedCountryCodeWithPlus());
 
-//        ConnectivityManager connMgr = (ConnectivityManager)
-//                getSystemService(Context.CONNECTIVITY_SERVICE);
-//        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-//        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-//
-//        builder.setMessage("No Internet Connection!");
-//        builder.setTitle("Alert !");
-//        builder.setCancelable(true);
-//        AlertDialog alertDialog = builder.create();
-//        if (networkInfo != null && networkInfo.isConnected()) {
-//            alertDialog.cancel();
-//        } else {
-//            alertDialog.show();
-//        }
         binding.studentButton.setOnClickListener(v -> {
             student = true;
             faculty = false;

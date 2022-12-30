@@ -20,4 +20,14 @@
     <string name="play">Play</string>
     <string name="todo2">TODO</string>
     <string name="logout">Logout</string>
+    <string name="total">Total</string>
+    <string name="chemistry">Chemistry</string>
+    <string name="math">Math</string>
+    <string name="physics">Physics</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="subject">Subject</string>
+    <string name="test_1">Test-1</string>
+    <string name="test_2">Test-2</string>
+    <string name="finall">Final</string>
 </resources>

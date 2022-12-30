@@ -57,27 +57,27 @@
 
                 <TextView
                     style="@style/subject_tv"
-                    android:text="Subject"
+                    android:text="@string/subject"
                     android:textStyle="bold" />
 
                 <TextView
                     style="@style/test_1"
-                    android:text="Test-1"
+                    android:text="@string/test_1"
                     android:textStyle="bold" />
 
                 <TextView
                     style="@style/test_1"
-                    android:text="Test-2"
+                    android:text="@string/test_2"
                     android:textStyle="bold" />
 
                 <TextView
                     style="@style/test_1"
-                    android:text="Final"
+                    android:text="@string/finall"
                     android:textStyle="bold" />
 
                 <TextView
                     style="@style/test_1"
-                    android:text="Total"
+                    android:text="@string/total"
                     android:textStyle="bold" />
 
             </TableRow>
@@ -87,7 +87,7 @@
 
                 <TextView
                     style="@style/subject_tv"
-                    android:text="Hindi" />
+                    android:text="@string/hindi" />
 
                 <TextView
                     android:id="@+id/hindi_1"
@@ -115,7 +115,7 @@
 
                 <TextView
                     style="@style/subject_tv"
-                    android:text="English"
+                    android:text="@string/english"
 
                     />
 
@@ -143,7 +143,7 @@
 
                 <TextView
                     style="@style/subject_tv"
-                    android:text="Physics" />
+                    android:text="@string/physics" />
 
                 <TextView
                     android:id="@+id/pt1"
@@ -167,7 +167,7 @@
 
                 <TextView
                     style="@style/subject_tv"
-                    android:text="Math" />
+                    android:text="@string/math" />
 
                 <TextView
                     android:id="@+id/mt1"
@@ -193,7 +193,7 @@
 
                 <TextView
                     style="@style/subject_tv"
-                    android:text="Chemistry"
+                    android:text="@string/chemistry"
 
                     />
 
@@ -220,7 +220,7 @@
 
                 <TextView
                     style="@style/subject_tv"
-                    android:text="Total" />
+                    android:text="@string/total" />
 
                 <TextView
                     android:id="@+id/tt1"

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "715263463190",
-    "project_id": "classroomelite-a9442",
-    "storage_bucket": "classroomelite-a9442.appspot.com"
+    "project_number": "804889440282",
+    "project_id": "classroomelite-c7f11",
+    "storage_bucket": "classroomelite-c7f11.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:715263463190:android:0defa370178e1595cd0a37",
+        "mobilesdk_app_id": "1:804889440282:android:f09d8e40c51ea92e6361a3",
         "android_client_info": {
           "package_name": "com.ashish.classroomelite"
         }
       },
       "oauth_client": [
         {
-          "client_id": "715263463190-vgvtp2djb3egs42i5g1ecu0uejbd1ois.apps.googleusercontent.com",
+          "client_id": "804889440282-dfbqo3r7pb9hu83cfks7g4g5fmv7b4ml.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBNSMs5T1bJjvsWonyxXB9A56wzrhW36F4"
+          "current_key": "AIzaSyD62xUBbpGgVtM2bLj8b-E71AiojPKNXik"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "715263463190-vgvtp2djb3egs42i5g1ecu0uejbd1ois.apps.googleusercontent.com",
+              "client_id": "804889440282-dfbqo3r7pb9hu83cfks7g4g5fmv7b4ml.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

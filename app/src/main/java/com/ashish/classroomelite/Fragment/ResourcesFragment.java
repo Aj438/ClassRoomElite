@@ -66,6 +66,7 @@ public class ResourcesFragment extends Fragment implements VideoAdapter.CallBack
         storage = FirebaseStorage.getInstance();
         player = new ExoPlayer.Builder(requireContext()).build();
         binding.exoplayer.setPlayer(player);
+        assert getArguments() != null;
         videoRef = firestore.collection("video").document(getArguments().getString("className"));
 
         progressDialog = new ProgressDialog(requireContext());
@@ -102,7 +103,7 @@ public class ResourcesFragment extends Fragment implements VideoAdapter.CallBack
 
     private void setRecyclerView() {
         videoRef.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
+            if (task.isSuccessful()&&task.getResult()!=null) {
                 List<String> list = Objects.requireNonNull(task.getResult().toObject(VideoResources.class)).getVideoList();
                 adapter = new VideoAdapter(requireContext(),this,list);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext());
@@ -157,7 +158,7 @@ public class ResourcesFragment extends Fragment implements VideoAdapter.CallBack
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentResourcesBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }

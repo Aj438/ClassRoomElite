@@ -13,7 +13,7 @@
         android:layout_height="@dimen/_80sdp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_70sdp"
         android:background="@drawable/start_icon"
         android:contentDescription="@string/todo" />
     <LinearLayout

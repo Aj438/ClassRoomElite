@@ -3,6 +3,7 @@ package com.ashish.classroomelite.Adapter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,8 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Map;
 
 public class ResultAdapter extends FirestoreRecyclerAdapter<Result, ResultAdapter.viewHolder> {
     ResultItemBinding bind;
@@ -35,8 +38,8 @@ public class ResultAdapter extends FirestoreRecyclerAdapter<Result, ResultAdapte
         documentReference.get().addOnCompleteListener(task -> {
             Student student = task.getResult().toObject(Student.class);
             if (student != null) {
-                bind.studentName.setText(student.getName());
-                bind.studentRoll.setText(student.getRoll_no());
+                bind.studentName.setText(String.format("Name-%s", student.getName()));
+                bind.studentRoll.setText(String.format("Roll No.-%s", student.getRoll_no()));
             }
         });}
         setResult(model);
@@ -44,26 +47,29 @@ public class ResultAdapter extends FirestoreRecyclerAdapter<Result, ResultAdapte
 
     private void setResult(Result model) {
         if (model.getTest_1() != null) {
-            bind.hindi1.setText(model.getTest_1().get(Helper.Hindi));
-            bind.et1.setText(model.getTest_1().get(Helper.English));
-            bind.pt1.setText(model.getTest_1().get(Helper.Physics));
-            bind.ct1.setText(model.getTest_1().get(Helper.Chemistry));
-            bind.mt1.setText(model.getTest_1().get(Helper.Math));
+            SetTextStudent(bind.hindi1, model.getTest_1(), bind.et1, bind.pt1, bind.ct1, bind.mt1, bind.tt1);
         }
         if (model.getTest_2() != null) {
-            bind.hindi2.setText(model.getTest_2().get(Helper.Hindi));
-            bind.et2.setText(model.getTest_2().get(Helper.English));
-            bind.pt2.setText(model.getTest_2().get(Helper.Physics));
-            bind.ct2.setText(model.getTest_2().get(Helper.Chemistry));
-            bind.mt2.setText(model.getTest_2().get(Helper.Math));
+            SetTextStudent(bind.hindi2, model.getTest_2(), bind.et2, bind.pt2, bind.ct2, bind.mt2, bind.tt2);
         }
         if (model.getFinal_Result() != null) {
-            bind.hindiFinall.setText(model.getFinal_Result().get(Helper.Hindi));
-            bind.eth.setText(model.getFinal_Result().get(Helper.English));
-            bind.pth.setText(model.getFinal_Result().get(Helper.Physics));
-            bind.cth.setText(model.getFinal_Result().get(Helper.Chemistry));
-            bind.mth.setText(model.getFinal_Result().get(Helper.Math));
+            SetTextStudent(bind.hindiFinall, model.getFinal_Result(), bind.eth, bind.pth, bind.cth, bind.mth, bind.tth);
         }
+    }
+
+    private void SetTextStudent(TextView bind, Map<String, String> model, TextView bind1, TextView bind2, TextView bind3, TextView bind4, TextView bind5) {
+        bind.setText(model.get(Helper.Hindi));
+        bind1.setText(model.get(Helper.English));
+        bind2.setText(model.get(Helper.Physics));
+        bind3.setText(model.get(Helper.Chemistry));
+        bind4.setText(model.get(Helper.Math));
+        int count= 0;
+        count +=Integer.parseInt(model.get(Helper.Hindi));
+        count +=Integer.parseInt(model.get(Helper.English));
+        count +=Integer.parseInt(model.get(Helper.Physics));
+        count +=Integer.parseInt(model.get(Helper.Chemistry));
+        count +=Integer.parseInt(model.get(Helper.Math));
+        bind5.setText(Integer.toString(count));
     }
 
     @NonNull

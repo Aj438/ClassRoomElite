@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/_15sdp"
         app:cardElevation="@dimen/_4sdp"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,11 +76,6 @@
                     android:text="@string/finall"
                     android:textStyle="bold" />
 
-                <TextView
-                    style="@style/test_1"
-                    android:text="@string/total"
-                    android:textStyle="bold" />
-
             </TableRow>
 
 
@@ -105,9 +101,6 @@
 
                     />
 
-                <TextView
-                    android:id="@+id/hindi_total"
-                    style="@style/test_1" />
 
             </TableRow>
 
@@ -133,9 +126,6 @@
 
                     />
 
-                <TextView
-                    android:id="@+id/eTotal"
-                    style="@style/test_1" />
 
             </TableRow>
 
@@ -157,9 +147,6 @@
                     android:id="@+id/pth"
                     style="@style/test_1" />
 
-                <TextView
-                    android:id="@+id/pTotal"
-                    style="@style/test_1" />
 
             </TableRow>
 
@@ -183,9 +170,6 @@
                     android:id="@+id/mth"
                     style="@style/test_1" />
 
-                <TextView
-                    android:id="@+id/mTotal"
-                    style="@style/test_1" />
 
             </TableRow>
 
@@ -209,10 +193,6 @@
                     android:id="@+id/cth"
                     style="@style/test_1" />
 
-                <TextView
-                    android:id="@+id/cTotal"
-                    style="@style/test_1" />
-
 
             </TableRow>
 
@@ -234,9 +214,6 @@
                     android:id="@+id/tth"
                     style="@style/test_1" />
 
-                <TextView
-                    android:id="@+id/tTotal"
-                    style="@style/test_1" />
 
             </TableRow>
 

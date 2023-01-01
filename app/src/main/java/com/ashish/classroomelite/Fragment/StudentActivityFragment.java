@@ -1,9 +1,11 @@
 package com.ashish.classroomelite.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +20,8 @@ import com.ashish.classroomelite.Models.Student;
 import com.ashish.classroomelite.databinding.FragmentStudentActivityBinding;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Map;
 
 public class StudentActivityFragment extends Fragment {
     FragmentStudentActivityBinding binding;
@@ -35,7 +39,6 @@ public class StudentActivityFragment extends Fragment {
             Navigation.findNavController(requireView()).navigate(action);
         });
         showResult();
-
     }
 
     private void showResult() {
@@ -45,29 +48,32 @@ public class StudentActivityFragment extends Fragment {
                 Result model = value.toObject(Result.class);
                 if (model != null) {
                     if (model.getTest_1() != null) {
-                        binding.resultLay.hindi1.setText(model.getTest_1().get(Helper.Hindi));
-                        binding.resultLay.et1.setText(model.getTest_1().get(Helper.English));
-                        binding.resultLay.pt1.setText(model.getTest_1().get(Helper.Physics));
-                        binding.resultLay.ct1.setText(model.getTest_1().get(Helper.Chemistry));
-                        binding.resultLay.mt1.setText(model.getTest_1().get(Helper.Math));
+                        SetText(binding.resultLay.hindi1, model.getTest_1(), binding.resultLay.et1, binding.resultLay.pt1, binding.resultLay.ct1, binding.resultLay.mt1,binding.resultLay.tt1);
                     }
                     if (model.getTest_2() != null) {
-                        binding.resultLay.hindi2.setText(model.getTest_2().get(Helper.Hindi));
-                        binding.resultLay.et2.setText(model.getTest_2().get(Helper.English));
-                        binding.resultLay.pt2.setText(model.getTest_2().get(Helper.Physics));
-                        binding.resultLay.ct2.setText(model.getTest_2().get(Helper.Chemistry));
-                        binding.resultLay.mt2.setText(model.getTest_2().get(Helper.Math));
+                        SetText(binding.resultLay.hindi2, model.getTest_2(), binding.resultLay.et2, binding.resultLay.pt2, binding.resultLay.ct2, binding.resultLay.mt2,binding.resultLay.tt2);
                     }
                     if (model.getFinal_Result() != null) {
-                        binding.resultLay.hindiFinall.setText(model.getFinal_Result().get(Helper.Hindi));
-                        binding.resultLay.eth.setText(model.getFinal_Result().get(Helper.English));
-                        binding.resultLay.pth.setText(model.getFinal_Result().get(Helper.Physics));
-                        binding.resultLay.cth.setText(model.getFinal_Result().get(Helper.Chemistry));
-                        binding.resultLay.mth.setText(model.getFinal_Result().get(Helper.Math));
+                        SetText(binding.resultLay.hindiFinall, model.getFinal_Result(), binding.resultLay.eth, binding.resultLay.pth, binding.resultLay.cth, binding.resultLay.mth,binding.resultLay.tth);
                     }
                 }
             }
         });
+    }
+
+    private void SetText(@NonNull TextView resultLay, @NonNull Map<String, String> model, @NonNull TextView resultLay1, @NonNull TextView resultLay2, @NonNull TextView resultLay3, @NonNull TextView resultLay4, @NonNull TextView total) {
+        resultLay.setText(model.get(Helper.Hindi));
+        resultLay1.setText(model.get(Helper.English));
+        resultLay2.setText(model.get(Helper.Physics));
+        resultLay3.setText(model.get(Helper.Chemistry));
+        resultLay4.setText(model.get(Helper.Math));
+        int count= 0;
+        count +=Integer.parseInt(Helper.Hindi);
+        count +=Integer.parseInt(Helper.English);
+        count +=Integer.parseInt(Helper.Physics);
+        count +=Integer.parseInt(Helper.Chemistry);
+        count +=Integer.parseInt(Helper.Math);
+        total.setText(Integer.toString(count));
     }
 
     private void present() {
@@ -83,8 +89,7 @@ public class StudentActivityFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         firebaseFirestore = FirebaseFirestore.getInstance();
         student = (Student) getArguments().get("student");
         binding = FragmentStudentActivityBinding.inflate(inflater, container, false);
